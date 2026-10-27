@@ -482,7 +482,7 @@
           return sfxReady;
         }catch(e){AC=null;return Promise.resolve()}
       }
-      function playSfx(name,t,bus,gain,rate){
+      function playSfx(name,t,bus,gain,rate){ return; /* intro sound removed at Ray request */
         var buf=sfxBuf[name];if(!AC||!buf)return;
         try{
           var s=AC.createBufferSource();s.buffer=buf;if(rate)s.playbackRate.value=rate;
